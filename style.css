@@ -1,0 +1,262 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+/*
+    BARVY
+    šedá: #e5e5e5 (pozadí body)
+    světle fialová: #48418e (navigace, primární tlačítko, nadpisy služeb, patička)
+    tmavě fialová: #25133d (výchozí barva gradientu, hover primárního tlačítka)
+    nachová: #aa5477 (koncová barva gradientu)
+    gradient v záhlaví: linear-gradient(to right, #25133d 25%, #aa5477 100%)
+
+    PÍSMO
+    Source Sans Pro
+    https://fonts.google.com/specimen/Source+Sans+Pro?query=source+Sans
+    - light 300 (slogan)
+    - bold 700 (logo, nadpisy)
+    - regular 400 (vše ostatní)
+
+    HOVER EFEKT
+    navigace: prohodit barvu písma s barvou pozadí
+    primární tlačítko: ohraničení světle fialovou, pozadí tmavě fialovou
+    sekundární tlačítko: ohraničení i pozadí světle fialovou
+
+    BONUSOVÁ VÝZVA
+    Změň barvu ikon na tmavě fialovou.
+*/
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.container {
+    /* obsah stránky je omezený do pruhu širokého 1200px */
+    max-width: 1200px;
+    /* stránka je vycentrovaná */
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ----- zde začni psát vlastní CSS -----  
+*/
+
+.navigace li {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+}
+
+.polozka a {
+    color: #48418e;
+    text-decoration: none;
+    padding: 1rem 1rem;
+}
+
+.superapka {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navigace ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.polozka a:hover {
+    background-color: #48418e;
+    color: white;
+}
+
+.hlavicka {
+    background-image: linear-gradient(to right, #25133d 25%, #aa5477 100%);
+    color: white;
+    padding: 1rem;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.slogan {
+    font-weight: 300;
+}
+
+.hlavicka li {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hlavicka a {
+    color: white;
+    text-decoration: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.stahnout a {
+    background-color: #48418e;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.stahnout a:hover {
+    background-color: transparent;
+}
+
+.vice a {
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.vice a:hover {
+    background-color: #48418e;
+}
+
+.tlacitka {
+    margin-bottom: .5rem;
+}
+
+.telefon {
+    display: none;
+}
+
+.symbol {
+    width: 15vw;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.sluzby h2 {
+    text-align: center;
+    color: #48418e;
+}
+
+.sluzby p {
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.sluzby {
+    margin-bottom: 2rem;
+}
+
+.paticka {
+    text-align: center;
+    background-color: #48418e;
+    color: white;
+    margin-bottom: 0;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+}
+
+@media screen and (min-width: 425px) {
+    .tlacitka {
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+    }
+    .stahnout {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+    .stahnout a,
+    .vice a {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .slogan {
+        font-size: 1.5rem;
+    }
+    .sluzby {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .navigace {
+        display: flex;
+    }
+    .prvni,
+    .druhy {
+        display: flex;
+    }
+    .sluzby {
+        display: flex;
+    }
+    .symbol {
+        width: 10vw;
+    }
+    h1 {
+        font-size: 4rem;
+        margin: 0;
+    }
+    .slogan {
+        font-size: 2rem;
+    }
+    .tlacitka {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .sluzby {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 890px) {
+    .symbol {
+        width: 7vw;
+    }
+    h1 {
+        font-size: 4rem;
+        margin: 0;
+    }
+    .slogan {
+        font-size: 2rem;
+        margin: 0;
+    }
+    .tlacitka {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .hlavicka {
+        display: flex;
+        justify-content: space-between;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .telefon {
+        display: flex;
+        margin-right: -1rem;
+        margin-bottom: -1rem;
+    }
+}
+
